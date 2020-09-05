@@ -14,11 +14,20 @@ const DashboardBox = styled.div`
 
 const Dashboard = () => {
   const [pokemonList, updatePokemonList] = useState([]);
+
   useEffect(() => {
-    axios.get("https://pokeapi.co/api/v2/pokemon?limit=20").then((response) => {
+    const minhaPromise = axios.get(
+      "https://pokeapi.co/api/v2/pokemon?limit=151"
+    );
+    minhaPromise.then((response) => {
+      // response.data.results
       updatePokemonList(response.data.results);
     });
-  }, []);
+  }, []); //base_url
+
+  // useEffect(() => {
+  //   console.log("USe effect executado");
+  // }, [pokemonList]);
 
   return (
     <DashboardBox>
