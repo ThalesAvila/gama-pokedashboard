@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import pokeball from '../images/pokeball.png';
+import {Link} from 'react-router-dom'
 const Header = () => {
   const HeaderWrapper = styled.div`
     width: 100%;
@@ -20,7 +21,9 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <LogoWrapper>
+        <Link to="/">
         <PokemonTitle src={pokeball} />
+        </Link>
         <PokemonTitle src='https://fontmeme.com/permalink/200717/572686869a17dcc52acfc9572f28afe7.png' />
       </LogoWrapper>
     </HeaderWrapper>
